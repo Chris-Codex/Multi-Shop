@@ -1,5 +1,7 @@
 import React from 'react'
 import { IoIosArrowDown } from "react-icons/io"
+import { FaShoppingCart } from "react-icons/fa"
+import { AiTwotoneHeart } from "react-icons/ai"
 
 const Top_Header = () => {
   return (
@@ -16,13 +18,13 @@ const Top_Header = () => {
           <h3>My Account</h3>
           <IoIosArrowDown />
         </div>
-        <div className='icon-card'>
-          <h3>Logo</h3>
-          <h3>0</h3>
+        <div className='icon-card-one'>
+          <AiTwotoneHeart size={20} color="#595959" />
+          <h3 className='icon-count'>0</h3>
         </div>
-        <div className='icon-card'>
-          <h3>Logo</h3>
-          <h3>0</h3>
+        <div className='icon-card-one'>
+          <FaShoppingCart size={20} color="#595959" />
+          <h3 className='icon-count'>0</h3>
         </div>
       </div>
     </div>
