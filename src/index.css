@@ -19,7 +19,7 @@
 }
 
 .orderlist {
-  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:space-x-4 lg:text-[#999]
+  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:space-x-4 lg:text-[#6a6969]
 }
 
 .account-card {
@@ -27,7 +27,7 @@
 }
 
 .icon-card {
-  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:justify-between lg:gap-2
+  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:justify-between lg:gap-1
 }
 
 .icon-card-one {
@@ -42,9 +42,9 @@
 
 /*Second Header*/
 .header {
-  @apply flex flex-row justify-between items-center w-full h-[60px] bg-[#595959] px-3
+  @apply relative flex flex-row justify-between items-center w-full h-[60px] bg-[#595959] px-3
           md:flex md:flex-row md:justify-between md:items-center md:w-full md:h-[60px] md:bg-[#595959]
-          lg:flex lg:flex-row lg:justify-between lg:px-20 lg:w-full lg:h-[60px] lg:bg-[#fff] lg:pt-6  
+          lg:flex lg:flex-row lg:justify-between lg:px-20 lg:w-full lg:h-[80px] lg:bg-[#fff] lg:py-6  
 }
 
 .header-title {
@@ -66,9 +66,22 @@
 }
 
 .icon-hamburger {
-  @apply flex items-center justify-center w-[50px] h-[40px] border border-[#999]
+  @apply flex items-center justify-center w-[50px] h-[40px] border border-[#999] rounded-md cursor-pointer
           md:flex md:items-center md:justify-center md:w-[50px] md:h-[40px] md:border md:border-[#999]
           lg:hidden
+}
+
+.navmobile-dropdown {
+  @apply absolute flex w-full h-[150px] bg-[#595959] px-3
+          lg:hidden
+}
+
+.navmobile-dropdown-text {
+  @apply text-[#fff] mt-1
+}
+
+.navmobile-dropdown-list {
+  @apply mt-2 lg:hover:text-[#FFC300] cursor-pointer
 }
 
 .icon-count-heart {
@@ -76,9 +89,79 @@
 }
 
 .search {
-  @apply sm:hidden lg:flex flex-row lg:w-[350px] lg:h-[50px] lg:border lg:border-[#c8c5c5]
+  @apply sm:hidden lg:flex 
+          lg:flex-row lg:items-center lg:justify-between lg:w-[350px] lg:h-[50px]
+}
+
+.input-field {
+  @apply lg:flex-row lg:items-center lg:justify-between lg:w-[300px] lg:h-[50px] lg:border lg:border-[#c8c5c5] lg:outline-none lg:px-2
+}
+
+.search-icon {
+  @apply sm:hidden 
+          lg:flex lg:items-center lg:justify-center lg:w-[50px] lg:h-[50px] lg:border lg:border-[#999]
 }
 
 .customer-service-side {
-  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:space-x-2
+  @apply sm:hidden md:hidden 
+          lg:grid grid-rows-1 lg:flex-row lg:space-x-2
+}
+
+.customer-text {
+  @apply sm:hidden lg:flex lg:text-[#999] lg:font-bold
+}
+
+.customer-num {
+  @apply sm:hidden lg:flex lg:text-[#595959]
+}
+
+/*Third Header*/
+.third-header {
+  @apply lg:flex lg:flex-row lg:justify-between lg:px-20 lg:w-full lg:h-[70px] lg:bg-[#595959] lg:py-6
+}
+
+.category-Links-container {
+  @apply sm:hidden lg:flex lg:flex-row lg:w-full lg:space-x-4
+}
+
+.hamburger-category-container {
+  @apply sm:hidden lg:flex lg:flex-row lg:gap-2 lg:items-center lg:text-[#595959] lg:font-bold
+}
+
+.category-card-header {
+  @apply sm:hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:px-6 lg:w-[400px] lg:h-[70px] lg:bg-[#FFC300] lg:mt-[-24px]
+}
+
+.nav-list {
+  @apply sm:hidden lg:flex lg:flex-row lg:items-center lg:mt-[-24px] lg:h-[70px] lg:space-x-4 lg:text-[#fff]
+}
+
+
+/*Slider Container*/
+.slider-container {
+  @apply relative flex items-center justify-center w-full h-[380px] md:relative md:flex md:items-center md:justify-center md:w-full md:h-[450px] px-3 mt-4 lg:hidden
+}
+
+.image-size {
+  @apply w-full h-[380px] brightness-50 md:w-full md:h-[450px]
+}
+
+.text-display {
+  @apply absolute  grid place-items-center
+}
+
+.h3-text {
+  @apply text-[#fff] text-[30px] font-semibold
+}
+
+.p-text {
+  @apply text-[#fff] text-[16px] grid w-full place-content-center
+}
+
+.slider-navigation {
+  @apply absolute flex flex-row items-center justify-center gap-4 bottom-8
+}
+
+.text-display-btn {
+  @apply flex items-center justify-center text-[#fff] w-[120px] h-[50px] border border-[#fff] mt-4
 }
