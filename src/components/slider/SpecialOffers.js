@@ -9,7 +9,7 @@ const SpecialOffers = () => {
                 return (
                     <div className='slider-specialOffer' key={id}>
                         <div className='image-card'>
-                            <img src={image} alt="image" className='w-full h-[200px] md:h-[260px]' />
+                            <img src={image} alt="image" className='w-full h-[200px] md:h-[290px]' />
                         </div>
                         <div className='image-contents'>
                             <p className='save-text'>{save}</p>

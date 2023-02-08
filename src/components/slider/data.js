@@ -18,13 +18,13 @@ export const specialOfferData = [
     {
         id: 1,
         title: "Special Offer",
-        save: "Save 20%",
-        image: "https://ld-prestashop.template-help.com/prestashop_21250/modules/jxmegalayout/extracontent/kT0TqC8fXMtkXXTw.jpg"
+        save: "SAVE 20%",
+        image: "https://img.freepik.com/free-photo/female-friends-out-shopping-together_53876-25041.jpg?w=2000"
     },
     {
         id: 2,
         title: "Special Offer",
-        save: "Save 20%",
-        image: "https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200"
+        save: "SAVE 20%",
+        image: "https://thumbs.dreamstime.com/b/love-shopping-close-up-beautiful-couple-walking-happily-town-hugging-carrying-bags-their-55108418.jpg"
     }
 ]

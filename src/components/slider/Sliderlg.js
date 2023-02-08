@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs"
 import { useDispatch, useSelector } from 'react-redux'
 import { nextSlide, prevSlide, startAutoSlide, stopAutoSlide } from '../../features/sliderSlice/sliderSlice'
+import { specialOfferData } from './data'
 
 
 
@@ -13,9 +14,9 @@ const Sliderlg = () => {
 
     useEffect(() => {
         dispatch(startAutoSlide());
-        return (() => {
+        return () => {
             dispatch(stopAutoSlide())
-        })
+        }
     }, [])
 
     return (
@@ -39,13 +40,21 @@ const Sliderlg = () => {
             })}
 
             <div className='sales-container'>
-                <div className='sales-image'>
-                    image
-                    <div className='sales-text'>
-                        <p>SAVE 20%</p>
-                        <h3>Special Offer</h3>
-                    </div>
-                </div>
+                {specialOfferData.map((list) => {
+                    const { id, save, image, title } = list
+                    return (
+                        <div className='sales-image' key={id}>
+                            <img src={image} alt="images" className='images' />
+                            <div className='sales-text'>
+                                <p className='font-bold mt-2'>{save}</p>
+                                <h3 className='text-h3'>{title}</h3>
+                                <div className='sales-btn'>
+                                    <p>Shop Now</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

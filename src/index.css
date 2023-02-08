@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .home-container {
-  @apply w-full bg-[#f0f1f1] 
+  @apply w-full  bg-[#f0f1f1] 
 }
 
 /*Top Header*/
@@ -72,7 +72,7 @@
 }
 
 .navmobile-dropdown {
-  @apply absolute flex w-full h-[150px] bg-[#595959] px-3
+  @apply flex w-full h-[150px] bg-[#595959] px-3
           lg:hidden
 }
 
@@ -176,7 +176,7 @@
 }
 
 .image-card {
-  @apply relative  w-full h-[200px] bg-black brightness-50 md:h-[260px] lg:hidden
+  @apply relative  w-full h-[200px] bg-black brightness-50 md:h-[290px] lg:hidden
 }
 
 .image-contents {
@@ -198,7 +198,7 @@
 /*Large Screen Slider*/
 
 .large-slider-container {
-  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:mx-6 px-[60px] gap-4  lg:w-full lg:h-[500px]
+  @apply sm:hidden md:hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:mx-6 px-[60px] gap-4  lg:w-full lg:h-[600px]
 }
 
 .slider-images {
@@ -214,11 +214,11 @@
 }
 
 .sales-image {
-  @apply relative bg-black w-11/12 h-[243px] mb-2 mt-2
+  @apply relative bg-black w-11/12 h-[280px] mb-[20px] mt-2
 }
 
 .sales-text {
-  @apply absolute flex items-center justify-center text-[#fff]
+  @apply absolute grid place-items-center w-11/12 mx-4 mt-[82px] text-[#fff]
 }
 
 .header-text {
@@ -234,8 +234,32 @@
 }
 
 .size-image {
-  @apply h-[500px] w-[1100px] brightness-50
+  @apply h-[600px] w-[1100px] brightness-50
 }
 
+.sales-btn {
+  @apply flex items-center justify-center w-[120px] h-[40px] bg-[#FFC300] text-[#000] mt-3
+}
+
+.text-h3 {
+  @apply mt-2 font-semibold text-[25px]
+}
+
+.images {
+  @apply absolute w-[500px] h-[290px] brightness-50
+}
+
+/*SERVICE CSS*/
+.service-container {
+  @apply grid p-4 shadow-md w-full  mt-16 mb-8
+}
+
+.service-card {
+  @apply flex flex-row items-center px-10 gap-4 w-full h-[90px] mb-8 bg-[#fff] lg:hidden
+}
+
+.header-4 {
+  @apply  text-[#6a6969] text-[18px] lg:hidden
+}
 
 
