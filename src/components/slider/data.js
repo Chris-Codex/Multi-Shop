@@ -13,3 +13,18 @@ export const data = [
         image: "https://www.ebanman.com/wp-content/uploads/2021/04/9-best-cities-to-shop-for-mens-fashion.jpeg"
     }
 ]
+
+export const specialOfferData = [
+    {
+        id: 1,
+        title: "Special Offer",
+        save: "Save 20%",
+        image: "https://ld-prestashop.template-help.com/prestashop_21250/modules/jxmegalayout/extracontent/kT0TqC8fXMtkXXTw.jpg"
+    },
+    {
+        id: 2,
+        title: "Special Offer",
+        save: "Save 20%",
+        image: "https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200"
+    }
+]

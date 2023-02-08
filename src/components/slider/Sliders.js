@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs"
 import { useDispatch, useSelector } from 'react-redux'
 import { nextSlide, prevSlide } from '../../features/sliderSlice/sliderSlice'
+import SpecialOffers from './SpecialOffers'
 
 
 const Sliders = () => {
     const currentIndex = useSelector(state => state.slider.currentSlide)
-    console.log("INDEX", currentIndex)
     const dispatch = useDispatch()
     const slider = useSelector(state => state.slider.sliderData)
 
@@ -16,7 +16,8 @@ const Sliders = () => {
             {slider.map((list, sliderIndex) => {
                 return (
                     <div className={`relative flex items-center justify-center w-full h-[380px] 
-                    md:relative md:flex md:items-center md:justify-center md:w-full md:h-[450px] px-3 mt-4 lg:hidden 
+                    md:relative md:flex md:items-center md:justify-center md:w-full md:h-[450px] px-3 mt-4 
+                    lg:hidden 
                     ${currentIndex !== sliderIndex ? "hidden md:hidden" : ""}`} key={list.id}>
                         <img src={list.image} className="image-size" />
                         <div className='text-display'>
@@ -33,6 +34,8 @@ const Sliders = () => {
                     </div>
                 )
             })}
+
+            <SpecialOffers />
         </>
     )
 }

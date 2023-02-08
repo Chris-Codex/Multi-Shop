@@ -21,7 +21,6 @@ const ThirdHeader = () => {
                 </div>
                 {links.map((linklist) => {
                     const { id, linkName } = linklist
-                    console.log(linkName)
                     return (
                         <ul className='nav-list' key={id}>
                             <li className={`navmobile-dropdown-list ${linkName === "Home" ? "text-[#FFC300]" : null} `}>{linkName}</li>
