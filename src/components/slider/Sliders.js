@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+
+import React from 'react'
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs"
 import { useDispatch, useSelector } from 'react-redux'
 import { nextSlide, prevSlide } from '../../features/sliderSlice/sliderSlice'
@@ -19,7 +19,7 @@ const Sliders = () => {
                     md:relative md:flex md:items-center md:justify-center md:w-full md:h-[450px] px-3 mt-4 
                     lg:hidden 
                     ${currentIndex !== sliderIndex ? "hidden md:hidden" : ""}`} key={list.id}>
-                        <img src={list.image} className="image-size" />
+                        <img src={list.image} alt="name" className="image-size" />
                         <div className='text-display'>
                             <h3 className='h3-text'>{list.title}</h3>
                             <p className='p-text'>{list.desc}</p>

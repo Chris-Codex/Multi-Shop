@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs"
 import { useDispatch, useSelector } from 'react-redux'
-import { nextSlide, prevSlide, startAutoSlide, stopAutoSlide } from '../../features/sliderSlice/sliderSlice'
+import { nextSlide, prevSlide } from '../../features/sliderSlice/sliderSlice'
 import { specialOfferData } from './data'
 
 
@@ -12,12 +12,12 @@ const Sliderlg = () => {
     const currentIndex = useSelector((state) => state.slider.currentSlide)
     const slider = useSelector(state => state.slider.sliderData)
 
-    useEffect(() => {
-        dispatch(startAutoSlide());
-        return () => {
-            dispatch(stopAutoSlide())
-        }
-    }, [])
+    // useEffect(() => {
+    //     dispatch(startAutoSlide());
+    //     return () => {
+    //         dispatch(stopAutoSlide())
+    //     }
+    // }, [])
 
     return (
         <div className='large-slider-container'>
@@ -25,7 +25,7 @@ const Sliderlg = () => {
                 const { id, image, title, desc } = content
                 return (
                     <div className={`flex items-center  justify-center relative bg-black w-8/12 h-[500px] py-8 ${currentIndex !== sliderIndex ? "hidden" : ""}`} key={id}>
-                        <img src={image} alt="image" className='size-image' />
+                        <img src={image} alt="images" className='size-image' />
                         <div className='slider-contents'>
                             <h3 className='header-text'>{title}</h3>
                             <p className='param-text'>{desc}</p>
