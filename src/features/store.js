@@ -4,8 +4,6 @@ import productReducer from './productSlice/productSlice';
 import cartReducer from './cartSlice/cartSlice';
 
 
-
-
 export const store = configureStore({
     reducer: {
         slider: sliderReducer,

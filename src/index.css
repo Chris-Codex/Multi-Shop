@@ -298,23 +298,23 @@
 /*Featured Product*/
 
 .featured-container {
-  @apply mt-16 px-4 
+  @apply mt-4 px-4 md:grid md:grid-cols-3 md:gap-3 md:mx-[2px] lg:grid lg:grid-cols-4 lg:gap-3 lg:mx-[65px]
 }
 
 .featured-card {
-  @apply w-full h-[400px] hover:brightness-50 shadow-md bg-[#fff] mb-4 mt-6
+  @apply w-full h-[400px] hover:brightness-75 shadow-md bg-[#fff] mb-4 mt-6 md:p-4
 }
 
 .featured-content {
-  @apply grid place-items-center  pt-[35px] 
+  @apply grid place-items-center pt-[35px]
 }
 
 .cats-image {
-  @apply w-[250px] h-[250px] bg-red-500
+  @apply w-[250px] h-[250px]
 }
 
 .cats-text {
-  @apply mt-4 grid place-items-center
+  @apply grid place-items-center
 }
 
 .cats-text-title {
@@ -322,25 +322,26 @@
 }
 
 .cats-text-price {
-  @apply mt-1
+  @apply mt-1 text-[20px] text-[#999]
 }
 
 .featured-image {
-  @apply w-[250px] h-[250px]
+  @apply  w-full h-[200px] md:w-[200px] md:h-[200px] md:mx-6
 }
 
 .featured-h3 {
-  @apply text-center text-[20px] text-[#595959] font-bold
+  @apply text-center text-[25px] text-[#595959] font-bold mt-8
 }
 
 .details-btn {
-  @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-black
+  @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-[#595959]
 }
 
 .cart-btn {
-  @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-[#ffc300] mt-3
+  @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-[#ffc300] mt-3 cursor-pointer
+          md:flex md:items-center md:justify-center md:font-bold md:text-[#fff] md:w-full md:h-[45px] md:bg-[#ffc300] md:mt-3 md:cursor-pointer
 }
 
 .btn-container {
-  @apply absolute w-3/12
+  @apply absolute w-3/12 md:w-4/12 lg:w-6/12
 }

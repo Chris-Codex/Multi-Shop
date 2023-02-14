@@ -4,10 +4,12 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import { AiTwotoneHeart } from "react-icons/ai"
 import { FaShoppingCart } from "react-icons/fa"
 import { largeScreeenLinks } from '../../CustomDatas'
+import { useSelector } from 'react-redux';
 
 
 const ThirdHeader = () => {
     const [links, setLinks] = useState(largeScreeenLinks)
+    const getQuantity = useSelector((state) => state.cart.cartItems)
 
     return (
         <div className='third-header'>
@@ -36,7 +38,7 @@ const ThirdHeader = () => {
                 </div>
                 <div className='icon-card'>
                     <FaShoppingCart size={20} color="#FFC300" />
-                    <h3 className='icon-count-heart'>0</h3>
+                    <h3 className='icon-count-heart'>{getQuantity ? getQuantity.length : 0}</h3>
                 </div>
             </div>
         </div>
