@@ -3,14 +3,11 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { featuredProducts } from '../../features/productSlice/productSlice';
 import { addToCart } from '../../features/cartSlice/cartSlice';
-import { toast } from 'react-toastify';
 
 
 const FeaturedProduct = () => {
     const dispatch = useDispatch()
     const getProducts = useSelector(state => state.product.products)
-    const cartItems = useSelector(state => state.cart.cartItems)
-    console.log("MY CART", cartItems)
     const [shwBtn, setShwBtn] = useState(null)
 
     const products = async () => {

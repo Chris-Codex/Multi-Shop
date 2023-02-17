@@ -5,6 +5,8 @@ import { AiTwotoneHeart } from "react-icons/ai"
 import { FaShoppingCart } from "react-icons/fa"
 import { largeScreeenLinks } from '../../CustomDatas'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
+
 
 
 const ThirdHeader = () => {
@@ -36,10 +38,12 @@ const ThirdHeader = () => {
                     <AiTwotoneHeart size={20} color="#FFC300" />
                     <h3 className='icon-count-heart'>0</h3>
                 </div>
-                <div className='icon-card'>
-                    <FaShoppingCart size={20} color="#FFC300" />
-                    <h3 className='icon-count-heart'>{getQuantity ? getQuantity.length : 0}</h3>
-                </div>
+                <Link to="/orders">
+                    <div className='icon-card'>
+                        <FaShoppingCart size={20} color="#FFC300" />
+                        <h3 className='icon-count-heart'>{getQuantity ? getQuantity.length : 0}</h3>
+                    </div>
+                </Link>
             </div>
         </div>
     )

@@ -42,8 +42,8 @@
 
 /*Second Header*/
 .header {
-  @apply relative flex flex-row justify-between items-center w-full h-[70px] bg-[#595959] px-3
-          md:flex md:flex-row md:justify-between md:items-center md:w-full md:h-[70px] md:bg-[#595959]
+  @apply relative flex flex-row justify-between items-center w-full h-[70px] bg-[#181f21] px-3
+          md:flex md:flex-row md:justify-between md:items-center md:w-full md:h-[70px] md:bg-[#181f21]
           lg:flex lg:flex-row lg:justify-between lg:px-20 lg:w-full lg:h-[80px] lg:bg-[#fff] lg:py-6  
 }
 
@@ -53,7 +53,7 @@
 
 .multi-text {
   @apply flex items-center justify-center px-2 w-[100px] h-[40px] bg-[#fff] text-[#595959] text-[27px] font-bold
-         lg:flex lg:w-[100px] lg:h-[50px] lg:px-2 lg:bg-[#595959] lg:text-[#FFC300] lg:text-[27px] lg:font-bold       
+         lg:flex lg:w-[100px] lg:h-[50px] lg:px-2 lg:bg-[#181f21] lg:text-[#FFC300] lg:text-[27px] lg:font-bold       
 }
 
 .shop-text {
@@ -72,7 +72,7 @@
 }
 
 .navmobile-dropdown {
-  @apply flex w-full h-[150px] bg-[#595959] px-3
+  @apply flex w-full h-[150px] bg-[#181f21] px-3
           lg:hidden
 }
 
@@ -117,7 +117,7 @@
 
 /*Third Header*/
 .third-header {
-  @apply lg:flex lg:flex-row lg:justify-between lg:px-20 lg:w-full lg:h-[70px] lg:bg-[#595959] lg:py-6
+  @apply lg:flex lg:flex-row lg:justify-between lg:px-20 lg:w-full lg:h-[70px] lg:bg-[#181f21] lg:py-6
 }
 
 .category-Links-container {
@@ -125,7 +125,7 @@
 }
 
 .hamburger-category-container {
-  @apply sm:hidden lg:flex lg:flex-row lg:gap-2 lg:items-center lg:text-[#595959] lg:font-bold
+  @apply sm:hidden lg:flex lg:flex-row lg:gap-2 lg:items-center lg:text-[#181f21] lg:font-bold
 }
 
 .category-card-header {
@@ -306,11 +306,11 @@
 }
 
 .featured-content {
-  @apply grid place-items-center pt-[35px]
+  @apply grid place-items-center pt-[35px] hover:scale-110 duration-300
 }
 
 .cats-image {
-  @apply w-[250px] h-[250px]
+  @apply w-[250px] h-[250px] 
 }
 
 .cats-text {
@@ -326,7 +326,7 @@
 }
 
 .featured-image {
-  @apply  w-full h-[200px] md:w-[200px] md:h-[200px] md:mx-6
+  @apply  w-full h-[200px] md:w-8/12 md:h-[200px] md:mx-6
 }
 
 .featured-h3 {
@@ -334,14 +334,106 @@
 }
 
 .details-btn {
-  @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-[#595959]
+  @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-[#181f21]
 }
 
 .cart-btn {
   @apply flex items-center justify-center font-bold text-[#fff] w-full h-[45px] bg-[#ffc300] mt-3 cursor-pointer
-          md:flex md:items-center md:justify-center md:font-bold md:text-[#fff] md:w-full md:h-[45px] md:bg-[#ffc300] md:mt-3 md:cursor-pointer
+          md:flex md:items-center md:justify-center md:font-bold md:text-[#fff] md:w-full md:h-[45px] md:bg-[#ffc300] md:mt-3 md:cursor-pointer 
 }
 
 .btn-container {
-  @apply absolute w-3/12 md:w-4/12 lg:w-6/12
+  @apply absolute w-3/12 mt-10 md:w-6/12 lg:w-6/12
+}
+
+/*Footer Container*/
+.footer-container {
+  @apply w-full  bg-[#181f21] mt-20 
+}
+
+.footer-row {
+  @apply px-4 pt-2 md:grid md:grid-cols-3 lg:mx-20 lg:pb-10 lg:grid lg:grid-cols-4 lg:w-full 
+}
+
+.getin-touch-h3 {
+  @apply text-[#fff] text-[22px] font-semibold
+}
+
+.getin-touch-p {
+  @apply text-[#fff] mt-4
+}
+
+.contacts-address {
+  @apply flex flex-row space-x-3 mt-6 mb-[-10px]
+}
+
+.contacts-h2 {
+  @apply text-[#fff]
+}
+
+.quick-shop {
+  @apply mt-16 md:mt-[-20px] md:grid md:items-center md:justify-center
+}
+
+.quick-shop-l1 {
+  @apply flex flex-row space-x-2 mt-6 mb-[-15px] items-center md:mt-[-35px]
+}
+
+.home-p {
+  @apply text-[#fff] 
+}
+
+/*News Letter*/
+.newslettter-fields {
+  @apply flex flex-row items-center justify-center
+}
+
+.getin-touch-h3 {
+  @apply mt-20
+}
+
+.newslettter-fields {
+  @apply w-full h-[40px] mt-3
+}
+
+.input {
+  @apply w-10/12 h-[40px]  bg-[#f4f2f2] flex items-center px-1 md:w-full md:h-[50px] 
+}
+
+.input-field {
+  @apply w-full h-[40px] bg-[#f4f2f2] flex items-center px-1 outline-none md:w-full md:h-[50px] md:border md:border-[#f4f2f2]
+}
+
+.input-btn {
+  @apply w-2/12 h-[40px] bg-[#ffc300] flex items-center justify-center text-[#535353] md:w-4/12 md:h-[50px]
+}
+
+/*FOLLOW US*/
+.follow-us {
+  @apply pt-6 md:mt-6 lg:mt-[-62px] lg:grid lg:place-content-center lg:font-bold
+}
+
+.follow-icons-row {
+  @apply flex flex-row space-x-3 pb-6 mt-4 lg:w-full
+}
+
+.icon {
+  @apply w-1/12 h-[35px] bg-[#ffc300] flex items-center justify-center md:w-2/12 md:h-[30px] lg:w-3/12 lg:h-[26px]
+}
+
+.follow-us-p {
+  @apply text-[#fff]
+}
+
+/*SHOPPING CART*/
+.cart-link-container {
+  @apply w-full h-[50px] px-4 flex items-center
+}
+
+.cart-link-header {
+  @apply bg-[#f1f0f0] w-full h-[50px] flex items-center gap-2 justify-center mt-6
+}
+
+.cart-link-p {
+  @apply text-[#848383]
 }

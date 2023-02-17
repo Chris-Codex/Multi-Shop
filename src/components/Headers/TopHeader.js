@@ -2,6 +2,8 @@ import React from 'react'
 import { IoIosArrowDown } from "react-icons/io"
 import { FaShoppingCart } from "react-icons/fa"
 import { AiTwotoneHeart } from "react-icons/ai"
+import { Link } from 'react-router-dom'
+
 
 const Top_Header = () => {
   return (
@@ -22,10 +24,12 @@ const Top_Header = () => {
           <AiTwotoneHeart size={20} color="#595959" />
           <h3 className='icon-count'>0</h3>
         </div>
-        <div className='icon-card-one'>
-          <FaShoppingCart size={20} color="#595959" />
-          <h3 className='icon-count'>0</h3>
-        </div>
+        <Link to="/orders">
+          <div className='icon-card-one'>
+            <FaShoppingCart size={20} color="#595959" />
+            <h3 className='icon-count'>0</h3>
+          </div>
+        </Link>
       </div>
     </div>
   )
