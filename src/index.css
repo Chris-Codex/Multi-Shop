@@ -426,6 +426,9 @@
 }
 
 /*SHOPPING CART*/
+.order-container {
+  @apply w-full bg-[#f0f1f1] overflow-hidden
+}
 .cart-link-container {
   @apply w-full h-[50px] px-4 flex items-center
 }
@@ -437,3 +440,118 @@
 .cart-link-p {
   @apply text-[#848383]
 }
+
+.orders-container {
+  @apply relative w-full h-[50px] px-4 flex items-center mt-16
+}
+
+.order-header {
+  @apply relative bg-[#181f21] text-[#fff] w-full h-[50px] mb-10 drop-shadow-md grid grid-cols-5 place-items-center justify-between px-3
+}
+
+.address-icon-text {
+  @apply flex flex-row space-x-4
+}
+
+.address-btn {
+  @apply text-[#ffc300] text-[15px] cursor-pointer
+}
+
+.chooseAddress-container {
+  @apply w-full h-[100px] px-5  mb-10
+}
+
+.address-content {
+  @apply px-3 bg-[#fff] drop-shadow-md w-full h-[40px]
+}
+
+.products-container {
+  @apply w-full h-[70px] px-4 flex items-center mt-16 justify-center mb-[-16px]
+}
+
+.products-header {
+  @apply bg-[#fff] text-[#535353] w-full h-[100px] mb-20 drop-shadow-md grid grid-cols-5 place-items-center justify-between px-3 hover:bg-[#e8e9ea]
+}
+
+.counter-card {
+  @apply grid grid-cols-3 w-full place-items-center bg-[#f0efed]
+}
+
+.count {
+  @apply w-11/12 h-[30px] bg-[#f0efed] place-items-center text-center text-[15px]
+}
+
+.counter-decrease {
+  @apply w-11/12 h-[30px] bg-[#ffc300] place-items-center text-center font-bold text-[20px]
+}
+
+.counter-increase {
+  @apply w-11/12 h-[30px] bg-[#ffc300] place-items-center text-center font-bold text-[20px]
+}
+
+.order-remove {
+  @apply w-5/12 h-[30px] bg-[#ff0800] place-items-center text-center font-bold text-[19px]  text-[#fff]
+}
+
+.product-image {
+  @apply w-8/12 h-[60px]
+}
+
+/*COUPON*/
+.coupon-container {
+  @apply w-full h-[70px] px-4 flex items-center justify-between mt-6
+}
+
+.input-field {
+  @apply w-10/12 h-[45px] bg-[#fff]
+}
+
+.input {
+  @apply w-full h-[45px] bg-[#fff] outline-none px-2
+}
+
+.coupon-btn {
+  @apply w-4/12 h-[45px] bg-[#ffc300] text-center flex items-center justify-center text-[#535353]
+}
+
+/*CART SUMMARY*/
+.cart-summary-container {
+  @apply w-full px-4 mt-6
+}
+
+.cart-icon {
+  @apply flex flex-row space-x-4 items-center
+}
+
+.cart-icon-summary {
+  @apply text-[20px]
+}
+
+.summary-container {
+  @apply w-full h-[400px] drop-shadow-md bg-[#fff] mt-4 mb-4 
+}
+
+.summary-content {
+  @apply flex flex-row justify-between px-8 pt-10 text-[#535353]
+}
+
+.summary-content-shipping {
+  @apply flex flex-row justify-between px-8 pt-6 text-[#535353]
+}
+
+.underlin {
+  @apply w-full h-[70px] px-8 mt-2
+}
+
+.main-underlin {
+  @apply  border border-[#ebeaea] w-full
+}
+
+.total-card {
+  @apply w-full px-8 mt-[-50px] flex flex-row justify-between text-[18px]
+}
+
+
+
+
+

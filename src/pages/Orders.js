@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { HeaderLinks, Headers, SearchBar } from '.';
 import { IoIosArrowForward } from "react-icons/io"
+import ProductsOrder from '../components/orders/ProductsOrder';
+import CartSummary from '../components/orders/CartSummary';
+
 
 const Orders = () => {
     const getOrders = useSelector((state) => state.cart.cartItems)
-    console.log("Oders", getOrders)
+
+    const orders_header = ["Products", "Price", "Quantity", "Total", "Remove"]
+
 
     return (
-        <section>
+        <section className='order-container'>
             <Headers />
             <SearchBar />
             <HeaderLinks />
@@ -24,6 +29,18 @@ const Orders = () => {
                     <p className='cart-link-p'>Order Complete</p>
                 </div>
             </div>
+
+            <div className='orders-container'>
+                <div className='order-header'>
+                    {orders_header.map((order) => {
+                        return (
+                            <h4>{order}</h4>
+                        )
+                    })}
+                </div>
+            </div>
+            <ProductsOrder />
+            <CartSummary />
         </section>
     )
 }
