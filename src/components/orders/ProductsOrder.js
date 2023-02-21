@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { removeProduct } from '../../features/cartSlice/cartSlice';
+import { decreaseCart, removeProduct } from '../../features/cartSlice/cartSlice';
+
 
 
 const ProductsOrder = () => {
@@ -42,7 +43,7 @@ const ProductsOrder = () => {
                                     </div>
                                     <div>${price}</div>
                                     <div className='counter-card'>
-                                        <div className='counter-decrease'>-</div>
+                                        <div className='counter-decrease' onClick={() => dispatch(decreaseCart({ id }))}>-</div>
                                         <div className='count'>
                                             <p className='text-center mt-1'>{cartQuantity
                                             }</p>
