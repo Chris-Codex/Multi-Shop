@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { decreaseCart, removeProduct } from '../../features/cartSlice/cartSlice';
+import { decreaseCart, increaseCart, removeProduct } from '../../features/cartSlice/cartSlice';
 
 
 
@@ -14,6 +14,11 @@ const ProductsOrder = () => {
         if (text.length > 0) {
             return text.slice(0, num) + "..."
         } return text
+    }
+
+    function convertPrice(price) {
+        const roundedPrice = Math.round(price * 100) / 100
+        return roundedPrice.toFixed(2)
     }
 
     return (
@@ -48,9 +53,9 @@ const ProductsOrder = () => {
                                             <p className='text-center mt-1'>{cartQuantity
                                             }</p>
                                         </div>
-                                        <div className='counter-increase'>+</div>
+                                        <div className='counter-increase' onClick={() => dispatch(increaseCart({ id }))}>+</div>
                                     </div>
-                                    <div>${price * cartQuantity}</div>
+                                    <div>${convertPrice(price * cartQuantity)}</div>
                                     <div className='order-remove' onClick={() => dispatch(removeProduct({ id }))}>
                                         <p>x</p>
                                     </div>
