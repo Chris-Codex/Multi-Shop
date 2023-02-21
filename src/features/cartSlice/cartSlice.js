@@ -47,18 +47,25 @@ export const cartSlice = createSlice({
 
             if (state.cartItems[itemIndex].cartQuantity > 1) {
                 state.cartItems[itemIndex].cartQuantity -= 1
-                toast.info("Item decreased")
+                toast.error("Item decreased")
             } else if (state.cartItems[itemIndex].cartQuantity === 1) {
                 const index = state.cartItems.filter((item) => item.id !== action.payload.id)
                 state.cartItems = index
                 localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
                 toast.error("Item deleted")
             }
+        },
 
+        clearCart: (state, action) => {
+            state.cartItems = []
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+            toast.error(`Cart Cleared`, {
+                position: "bottom-left"
+            })
         }
     }
 })
 
-export const { addToCart, removeProduct, increaseCart, decreaseCart } = cartSlice.actions
+export const { addToCart, removeProduct, increaseCart, decreaseCart, clearCart } = cartSlice.actions
 export default cartSlice.reducer
 export const selectCartTotal = (state) => state.cart.cartItems.reduce((total, cartItem) => total += cartItem.price, 0)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { decreaseCart, increaseCart, removeProduct } from '../../features/cartSlice/cartSlice';
+import { clearCart, decreaseCart, increaseCart, removeProduct } from '../../features/cartSlice/cartSlice';
+
 
 
 
@@ -63,6 +64,11 @@ const ProductsOrder = () => {
                             </div>
                         )
                     })}
+                    <div className='clear-cart' onClick={() => dispatch(clearCart())}>
+                        <div className='clear-cart-btn'>
+                            Clear Cart
+                        </div>
+                    </div>
                 </main>
             </div>
         </>

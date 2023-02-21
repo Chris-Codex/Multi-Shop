@@ -571,6 +571,13 @@
   @apply flex items-center justify-center w-7/12 h-[200px] md:w-7/12 md:h-[400px] lg:w-4/12 lg:h-[410px]
 }
 
+.clear-cart {
+  @apply px-4 w-full 
+}
+
+.clear-cart-btn {
+  @apply px-4 w-4/12 h-[50px] border border-[#fff] bg-[#f3f2f2] rounded-md flex items-center justify-center text-[#535353] cursor-pointer hover:bg-red-500 hover:text-[#fff] lg:w-3/12 lg:text-[#535353]
+}
 
 
 
