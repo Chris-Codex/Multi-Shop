@@ -32,10 +32,6 @@ const FeaturedProduct = () => {
 
     const handleProduct = (product) => {
         dispatch(addToCart(product))
-        // setTimeout(() => {
-
-        //     toast.success("Item Added To Cart")
-        // }, 1000)
     }
 
     return (

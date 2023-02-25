@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 const ThirdHeader = () => {
     const [links, setLinks] = useState(largeScreeenLinks)
-    const getQuantity = useSelector((state) => state.cart.cartItems)
+    const totalQuantity = useSelector(state => state.cart.cartTotalQuantity)
 
     return (
         <div className='third-header'>
@@ -41,7 +41,7 @@ const ThirdHeader = () => {
                 <Link to="/orders">
                     <div className='icon-card'>
                         <FaShoppingCart size={20} color="#FFC300" />
-                        <h3 className='icon-count-heart'>{getQuantity ? getQuantity.length : 0}</h3>
+                        <h3 className='icon-count-heart'>{totalQuantity ? totalQuantity : 0}</h3>
                     </div>
                 </Link>
             </div>

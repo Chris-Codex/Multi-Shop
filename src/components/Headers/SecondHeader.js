@@ -3,7 +3,9 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import { AiOutlineSearch } from "react-icons/ai"
 import { GrClose } from "react-icons/gr"
 
+
 const SecondHeader = () => {
+
     const [open, setOpen] = useState(false)
 
     const handleToggle = () => {

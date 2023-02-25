@@ -3,9 +3,12 @@ import { IoIosArrowDown } from "react-icons/io"
 import { FaShoppingCart } from "react-icons/fa"
 import { AiTwotoneHeart } from "react-icons/ai"
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 
 const Top_Header = () => {
+  const totalQuantity = useSelector(state => state.cart.cartTotalQuantity)
+
   return (
     <div className='topheader'>
       <ul className='orderlist'>
@@ -27,7 +30,7 @@ const Top_Header = () => {
         <Link to="/orders">
           <div className='icon-card-one'>
             <FaShoppingCart size={20} color="#595959" />
-            <h3 className='icon-count'>0</h3>
+            <h3 className='icon-count'>{totalQuantity ? totalQuantity : 0}</h3>
           </div>
         </Link>
       </div>

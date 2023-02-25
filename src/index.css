@@ -430,14 +430,18 @@
   @apply w-full bg-[#f0f1f1] overflow-hidden
 }
 .cart-link-container {
-  @apply w-full h-[50px] px-4 flex 
+  @apply w-full h-[50px] px-4 flex
 }
 
 .cart-link-header {
-  @apply bg-[#f1f0f0] w-full h-[50px] flex items-center gap-2  mt-6 md:px-16
+  @apply bg-[#f1f0f0] w-full h-[50px] flex items-center gap-1 px-4  mt-6  md:px-16
 }
 
 .cart-link-p {
+  @apply text-[#848383] hover:underline hover:underline-offset-1
+}
+
+.cart-link-checkout {
   @apply text-[#848383]
 }
 
@@ -528,7 +532,7 @@
 }
 
 .summary-container {
-  @apply w-full h-[300px] drop-shadow-md bg-[#fff] mt-4 mb-4 
+  @apply w-full h-[230px] drop-shadow-md bg-[#fff] mt-4 mb-4 
 }
 
 .summary-content {
@@ -536,7 +540,7 @@
 }
 
 .summary-content-shipping {
-  @apply flex flex-row justify-between px-8 pt-6 text-[#535353]
+  @apply flex flex-row justify-between px-8 mt-[-64px] text-[13px] text-[#535353]
 }
 
 .underlin {
@@ -579,5 +583,141 @@
   @apply px-4 w-4/12 h-[50px] border border-[#fff] bg-[#f3f2f2] rounded-md flex items-center justify-center text-[#535353] cursor-pointer hover:bg-red-500 hover:text-[#fff] lg:w-3/12 lg:text-[#535353]
 }
 
+/*CHECKOUT*/
+.wrapper {
+@apply bg-[#f1f0f0] lg:px-16
+}
 
+.checkout-link-container {
+  @apply w-full px-4 mt-4 md:px-0
+}
 
+.checkout-link-header {
+  @apply flex flex-row items-center w-full h-[50px] bg-[#f1f0f0] px-4
+}
+
+.billing-address-line {
+  @apply flex flex-row items-center gap-2  px-4 mt-10 text-[#535353] w-full
+}
+
+.billing-address-text {
+  @apply text-[20px] font-semibold w-full
+}
+
+.form-container-md {
+  @apply lg:grid md:grid-cols-2
+}
+
+.form-wrapper {
+  @apply w-full  mb-4 
+}
+
+.main-form-wrapper {
+  @apply  md:grid md:grid-cols-2
+}
+
+.form-wrapper-lines {
+  @apply flex flex-row items-center w-full px-4 gap-1 mt-8 
+}
+
+.lines {
+  @apply border border-dotted h-0 w-full bg-[#c4c2c2] 
+}
+
+.form-wrapper-h3 {
+  @apply w-[280px] h-[30px] font-semibold text-[#535353] text-[20px]
+}
+
+.form-container {
+  @apply mx-4 mt-10 drop-shadow-md bg-[#fff] pb-4
+}
+
+.form-wrapper {
+  @apply mt-[-20px] 
+}
+
+.form {
+  @apply px-6 pt-4
+}
+
+.form-p {
+  @apply text-[#8f8e8e]
+}
+
+.inputs {
+  @apply outline-none border border-[#c4c2c2] w-full h-[50px] px-2 mb-2 mt-2
+}
+
+/*CHECKOUT SUMMARY*/
+.summary-wrappper {
+  @apply px-4 mt-10
+}
+
+.order-wrapper-lines {
+  @apply flex flex-row items-center lg:mt-[-8px]
+}
+
+.order-wrapper-h3 {
+  @apply w-[200px] font-semibold text-[#535353] text-[20px]
+}
+
+.order-lines {
+  @apply w-full border border-dotted bg-[#c4c2c2] h-0
+}
+
+.summary-card {
+  @apply w-full h-auto bg-white drop-shadow-md mt-4 pb-10 lg:mt-10
+}
+
+.order-title {
+  @apply px-6 pt-4 font-semibold
+}
+
+.products-price {
+  @apply flex flex-row justify-between items-center px-6 pt-3 text-[#8f8e8e]
+}
+
+.divide-line-wrapper {
+  @apply w-full px-6 mt-3
+}
+
+.divide-line {
+  @apply border border-[#e5e3e3] w-full 
+}
+
+.subtotal {
+  @apply flex flex-row items-center justify-between px-6 mt-3
+}
+
+.subtotal-total {
+  @apply text-[#535353] font-semibold
+}
+
+.subtotal-p {
+  @apply text-[#535353] font-semibold
+}
+
+/*BILLING*/
+.billing-wrapper {
+  @apply mt-10
+}
+
+.select-payment-card {
+  @apply w-full h-[200px] drop-shadow-md bg-white mt-4
+}
+
+.select-payment {
+  @apply flex flex-row items-center gap-3 px-4 pt-8 mb-[-20px]
+}
+
+.checkboxes {
+  @apply indeterminate:bg-[#e5e3e3] 
+}
+
+.btn-container {
+  @apply px-4 mt-10 w-full 
+}
+
+.btn {
+  @apply w-full h-[55px] bg-[#ffc300] flex items-center justify-center text-[#5c5a5a] font-bold
+}

@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaMoneyCheckAlt } from "react-icons/fa"
-import { selectCartTotal } from '../../features/cartSlice/cartSlice'
+import { getSubTotals } from '../../features/cartSlice/cartSlice'
 import Footer from '../Footer'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const CartSummary = () => {
     const cartOrders = useSelector((state) => state.cart.cartItems)
+    const { cartTotalAmount } = useSelector(state => state.cart)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getSubTotals())
+    }, [cartOrders])
 
     return (
         <section>
@@ -26,24 +33,22 @@ const CartSummary = () => {
                 <div className='summary-container'>
                     <div className='summary-content'>
                         <p>Subtotal</p>
-                        <p>$300</p>
-                    </div>
-                    <div className='summary-content-shipping'>
-                        <p>Shipping</p>
-                        <p>$10</p>
+                        <p>${cartTotalAmount}</p>
                     </div>
                     <div className='underlin'>
                         <div className='main-underlin'></div>
                     </div>
-                    <div className='total-card'>
-                        <p>Total</p>
-                        <p>{selectCartTotal}</p>
+                    <div className='summary-content-shipping'>
+                        <p>Taxes and Shipping calculated at checkout</p>
                     </div>
-                    <div className='proceed-btn'>
-                        <div className='proceed-content'>
-                            <p>Proceed To Checkout</p>
+
+                    <Link to="/checkout">
+                        <div className='proceed-btn'>
+                            <div className='proceed-content'>
+                                <p>Proceed To Checkout</p>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
             {/* <Footer /> */}
