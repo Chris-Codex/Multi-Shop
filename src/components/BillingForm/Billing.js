@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Billing = () => {
+    const [state, setState] = useState()
     return (
         <div className='billing-wrapper'>
             <div className='order-wrapper-lines'>
@@ -9,12 +10,12 @@ const Billing = () => {
             </div>
             <div className='select-payment-card'>
                 <div className='select-payment'>
-                    <input id="draft" class="peer/draft" type="radio" name="status" checked />
-                    <label for="draft" class="peer-checked/draft:text-sky-500">Paypal</label>
+                    <input id="draft" className="peer/draft" type="radio" onChange={() => setState("")} name="status" checked />
+                    <p className="peer-checked/draft:text-sky-500">Paypal</p>
                 </div>
                 <div className='select-payment'>
-                    <input id="published" class="peer/published" type="radio" name="status" />
-                    <label for="published" class="peer-checked/published:text-sky-500">Master Card</label>
+                    <input id="published" className="peer/published" onChange={() => setState("")} type="radio" name="status" />
+                    <p className="peer-checked/published:text-sky-500">Paypal</p>
                 </div>
                 <div className='btn-container'>
                     <div className='btn'>

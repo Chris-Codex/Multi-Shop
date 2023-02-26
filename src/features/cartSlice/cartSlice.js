@@ -5,7 +5,8 @@ import { toast } from 'react-toastify';
 const initialState = {
     cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
     cartTotalQuantity: 0,
-    cartTotalAmount: 0
+    cartTotalAmount: 0,
+    shippingFee: 0
 }
 
 export const cartSlice = createSlice({
@@ -64,13 +65,14 @@ export const cartSlice = createSlice({
             })
         },
 
-        getSubTotals: (state, action) => {
+        getSubTotals: (state) => {
             let { total, quantity } = state.cartItems.reduce((cartTotal, cartItem) => {
                 const { price, cartQuantity } = cartItem
                 const itemTotal = price * cartQuantity
 
                 cartTotal.total += itemTotal
                 cartTotal.quantity += cartQuantity
+                state.cartTotalAmount += state.shippingFee
 
                 return cartTotal
             }, {
@@ -80,10 +82,15 @@ export const cartSlice = createSlice({
 
             state.cartTotalQuantity = quantity
             state.cartTotalAmount = total
+        },
+
+        getShippingFee: (state, action) => {
+            state.shippingFee = action.payload
+            state.cartTotalAmount += action.payload
         }
     }
 })
 
-export const { addToCart, removeProduct, increaseCart, decreaseCart, clearCart, getSubTotals } = cartSlice.actions
+export const { addToCart, removeProduct, increaseCart, decreaseCart, clearCart, getSubTotals, getShippingFee } = cartSlice.actions
 export default cartSlice.reducer
-export const selectCartTotal = (state) => state.cart.cartItems.reduce((total, cartItem) => total += cartItem.price, 0)
+
