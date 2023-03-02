@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoIosArrowDown } from "react-icons/io"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { AiTwotoneHeart } from "react-icons/ai"
@@ -12,6 +12,15 @@ import { Link } from 'react-router-dom'
 const ThirdHeader = () => {
     const [links, setLinks] = useState(largeScreeenLinks)
     const totalQuantity = useSelector(state => state.cart.cartTotalQuantity)
+    const [qty, setQty] = useState()
+    console.log("QTY", qty)
+
+    useEffect(() => {
+        if (totalQuantity > 0) {
+            setQty(totalQuantity)
+        }
+
+    }, [])
 
     return (
         <div className='third-header'>
@@ -41,7 +50,7 @@ const ThirdHeader = () => {
                 <Link to="/orders">
                     <div className='icon-card'>
                         <FaShoppingCart size={20} color="#FFC300" />
-                        <h3 className='icon-count-heart'>{totalQuantity ? totalQuantity : 0}</h3>
+                        <h3 className='icon-count-heart'>{totalQuantity}</h3>
                     </div>
                 </Link>
             </div>

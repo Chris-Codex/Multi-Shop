@@ -8,6 +8,9 @@ module.exports = {
       animation: {
         spin: 'spin 3s linear infinite',
       },
+      borderRadius: {
+        'full': '50%',
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },

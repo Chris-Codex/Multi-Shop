@@ -9,6 +9,9 @@ const initialState = {
     shippingFee: 0
 }
 
+console.log('cartItems from localStorage:', initialState.cartTotalQuantity);
+console.log('parsed cartItems:', JSON.parse(localStorage.getItem("cartItems")));
+
 export const cartSlice = createSlice({
     name: "cart",
     initialState,
@@ -73,6 +76,7 @@ export const cartSlice = createSlice({
                 cartTotal.total += itemTotal
                 cartTotal.quantity += cartQuantity
                 state.cartTotalAmount += state.shippingFee
+
 
                 return cartTotal
             }, {

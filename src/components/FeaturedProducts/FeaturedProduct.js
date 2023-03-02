@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { featuredProducts } from '../../features/productSlice/productSlice';
 import { addToCart } from '../../features/cartSlice/cartSlice';
+import { Link } from 'react-router-dom';
 
 
 const FeaturedProduct = () => {
@@ -55,7 +56,9 @@ const FeaturedProduct = () => {
                                 </div>
                                 {shwBtn === id ? (
                                     <div className='btn-container'>
-                                        <div className='details-btn'>Details</div>
+                                        <Link to={`product_desc/${id}`}>
+                                            <div className='details-btn'>Details</div>
+                                        </Link>
                                         <div className='cart-btn' onClick={() => handleProduct(list)}>Add To bag</div>
                                     </div>
                                 ) : ""}
