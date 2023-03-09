@@ -72,12 +72,12 @@
 }
 
 .navmobile-dropdown {
-  @apply flex w-full h-[150px] bg-[#181f21] px-3
+  @apply flex w-full h-[150px] bg-[#181f21] px-3 
           lg:hidden
 }
 
 .navmobile-dropdown-text {
-  @apply text-[#fff] mt-1
+  @apply text-[#fff] mt-1 
 }
 
 .navmobile-dropdown-list {
@@ -589,11 +589,11 @@
 }
 
 .checkout-link-container {
-  @apply w-full px-4 mt-4 md:px-0
+  @apply w-full px-4 mt-4 md:px-4 lg:px-20
 }
 
 .checkout-link-header {
-  @apply flex flex-row items-center w-full h-[50px] bg-[#f1f0f0] px-4
+  @apply flex flex-row items-center w-full h-[50px] bg-[#f1f0f0] 
 }
 
 .billing-address-line {
@@ -725,35 +725,36 @@
 /*SINGLE PRODUCT*/
 
 .single-product-wrapper {
-  @apply px-4
+  @apply px-4 mt-[-27px] lg:flex lg:flex-row lg:space-x-8 md:px-4 lg:px-20 lg:mt-[-27px]
 }
 
 .singleproduct-content-container {
-  @apply bg-red-900 mt-10
+  @apply mt-10 lg:w-8/12 lg:h-[490px]
 }
 
-.product-image {
-  @apply flex items-center justify-center w-full h-[400px] bg-[#fff] drop-shadow-md
+.prodt-image {
+  @apply flex items-center justify-center w-full h-[400px] bg-[#fff] drop-shadow-md md:h-[450px] lg:h-[490px]
 }
 
 .image-wrapper {
-  @apply flex items-center justify-center w-10/12 h-[370px]
+  @apply flex items-center justify-center w-10/12 h-[370px] md:w-5/12 md:h-[350px] lg:w-9/12 lg:h-[380px]
 }
 
 .singleproduct-content-order {
-  @apply px-6 pt-6 w-full h-auto bg-[#fff] drop-shadow-md mt-10
+  @apply px-6 pt-6 w-full h-auto bg-[#fff] drop-shadow-md mt-10 
 }
 
 .product-content-h3 {
-  @apply font-bold text-[20px]
+  @apply font-bold text-[20px] 
 }
 
 .rating {
-  @apply flex flex-row items-center justify-center space-x-3 w-3/12 h-[30px] bg-[#f0f1f1] rounded-md text-[#535353] text-[14px] mt-4
+  @apply flex flex-row items-center px-2 space-x-3 w-3/12 h-[30px] bg-[#f0f1f1] rounded-md text-[#535353] text-[14px] mt-4
+          md:w-[100px] lg:flex lg:flex-row lg:space-x-3 lg:w-[100px]
 }
 
 .product-price {
-  @apply mt-4 text-[20px] font-semibold text-[#535353]
+  @apply mt-4 text-[24px] font-semibold text-[#535353]
 }
 
 .product-desc {
@@ -765,12 +766,43 @@
 }
 
 .sizes-header {
-  @apply text-[#535353] font-bold
-
-  
+  @apply text-[#535353] font-bold 
 }
 
 .sizes-input {
   @apply flex flex-row space-x-2
 }
+
+.order-colors {
+  @apply flex flex-row items-center space-x-4 mt-3 w-full
+}
+
+.color-header {
+  @apply flex flex-row items-center space-x-4 text-[#535353] font-bold
+}
+
+.addtocart-wrapper {
+  @apply mt-6 flex flex-row space-x-[-20px]
+}
+
+.btn-wrapper {
+  @apply flex flex-row  w-6/12 mb-10 md:w-3/12 lg:w-3/12
+}
+
+.increment-btn {
+  @apply w-3/12 h-[40px] bg-[#ffc300] flex items-center justify-center
+}
+
+.count-btn {
+  @apply w-3/12 h-[40px] bg-[#f8f7f7] flex items-center justify-center
+}
+
+.decrement-btn {
+  @apply w-3/12 h-[40px] bg-[#ffc300] flex items-center justify-center
+}
+
+.add-to-cart {
+  @apply flex items-center justify-center w-4/12 h-[40px] bg-[#ffc300] space-x-2 md:w-3/12 lg:w-3/12
+}
+
 

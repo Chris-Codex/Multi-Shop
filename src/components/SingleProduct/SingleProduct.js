@@ -3,11 +3,18 @@ import { IoIosArrowForward } from "react-icons/io"
 import { useParams } from 'react-router-dom'
 import { HeaderLinks, Headers, SearchBar } from '../../pages'
 import Footer from '../Footer';
+import AddToCart from './AddToCart';
 import CheckBox from './CheckBox';
+import CheckColors from './CheckColors';
+import { useSelector } from 'react-redux';
+import { removeProduct } from '../../features/cartSlice/cartSlice';
 
 
 const SingleProduct = () => {
     const { id } = useParams()
+    const { products } = useSelector(state => state.product)
+
+    console.log("CART", products)
 
     return (
         <div className='home-container'>
@@ -26,31 +33,39 @@ const SingleProduct = () => {
                 </div>
             </div>
 
-            <div className='single-product-wrapper'>
-                <div className='singleproduct-content-container'>
-                    <div className='product-image'>
-                        <img src='https://www.thebeautysalon.ie/wp-content/uploads/2021/05/imagemain.jpg' className='image-wrapper' alt="name" />
-                    </div>
-                </div>
+            {products.filter((product) => (product.id == id)).map((items) => {
 
-                <div className='singleproduct-content-order'>
-                    <div className='product-content'>
-                        <h3 className='product-content-h3'>Product Name Goes Here</h3>
-                        <div className='rating'>
-                            <p>Rating:</p>
-                            <h3>9.0</h3>
+                const { id, image, title, price, description, rating, cartQuantity } = items
+                return (
+                    <div className='single-product-wrapper' key={id}>
+                        <div className='singleproduct-content-container'>
+                            <div className='prodt-image'>
+                                <img src={image} className='image-wrapper' alt="name" />
+                            </div>
                         </div>
-                        <h3 className='product-price'>$129.09</h3>
-                        <p className='product-desc'>
-                            of shipping fee' did not match any file(s) known to git
-                            admin@Admins-MacBook-Pro multi-shop % git commit -m "Calculation of shipping fee"
-                            [main 644904f] Calculation of shipping fee
-                        </p>
 
-                        <CheckBox />
+                        <div className='singleproduct-content-order'>
+                            <div className='product-content'>
+                                <div>
+                                    <h3 className='product-content-h3'>{title}</h3>
+                                    <div className='rating'>
+                                        <p>Rating:</p>
+                                        <h3>{rating.rate}</h3>
+                                    </div>
+                                    <h3 className='product-price'>${price}</h3>
+                                    <p className='product-desc'>
+                                        {description}
+                                    </p>
+                                </div>
+
+                                <CheckBox />
+                                <CheckColors />
+                                <AddToCart id={id} cartQuantity={cartQuantity} />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                )
+            })}
 
             <Footer />
         </div>

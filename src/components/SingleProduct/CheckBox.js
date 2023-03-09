@@ -27,7 +27,7 @@ const CheckBox = () => {
                                 checked={checked}
                                 onChange={() => handleOptionChange(id)}
                             />
-                            <p>{label}</p>
+                            <p className='text-[#797979]'>{label}</p>
                         </div>
                     </div>
                 )
