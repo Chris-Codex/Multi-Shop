@@ -2,7 +2,10 @@ const { query } = require("express")
 const express = require("express")
 const router = express.Router()
 const productModel = require("../model/products")
+const { ObjectId } = require("mongodb")
 
+
+//Post Products
 router.post("/", (req, res) => {
     const { title, price, description, category, image, color, size } = req.body
 
@@ -18,6 +21,8 @@ router.post("/", (req, res) => {
     }
 })
 
+
+//Get All Products
 router.get("/", async (req, res) => {
 
     try {
@@ -28,6 +33,8 @@ router.get("/", async (req, res) => {
     }
 })
 
+
+//Get One Product
 router.get("/:productid", async (req, res) => {
 
     try {
@@ -38,10 +45,13 @@ router.get("/:productid", async (req, res) => {
     }
 })
 
-router.patch("/:productid", async (req, res) => {
+
+//Edit Product
+router.patch("/update/:productid", async (req, res) => {
     try {
+        const productId = new ObjectId(req.params.productid)
         const editProduct = await productModel.updateOne(
-            { id: req.params.productid },
+            { _id: productId },
             {
                 $set: {
                     title: req.body.title,
@@ -58,6 +68,30 @@ router.patch("/:productid", async (req, res) => {
         res.json(editProduct)
     } catch (error) {
         res.status(400).json({ message: error.message })
+    }
+})
+
+//Delete Product
+router.delete("/remove/:productid", async (req, res) => {
+    const productId = req.params.productid
+
+    let removeProduct
+
+    if (!ObjectId.isValid(productId)) {
+        return res.status(400).json({ message: "Product ID is invalid" })
+    }
+
+    try {
+        removeProduct = await productModel.findByIdAndDelete(productId)
+
+        if (!removeProduct) {
+            return res.status(400).json({ message: 'Product not found' })
+        }
+
+        return res.status(200).json({ message: "Product Deleted" })
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
     }
 })
 

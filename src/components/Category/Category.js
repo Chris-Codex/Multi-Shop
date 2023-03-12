@@ -10,10 +10,10 @@ const Category = () => {
                 <h3>#CATEGORIES</h3>
             </div>
             <div className='category-container'>
-                {cat.map((item) => {
+                {cat.map((item, index) => {
                     const { id, cat_image, category, count } = item
                     return (
-                        <div className='category-card' key={id}>
+                        <div className='category-card' key={index}>
                             <div className='category-image'>
                                 <img src={cat_image} alt="name" className='image' />
                             </div>
