@@ -15,17 +15,12 @@ const FeaturedProduct = () => {
     const [loading, setLoading] = useState(false)
     const [productDetails, setProductDetails] = useState(null)
 
-
-
-
-
     const handleProductCard = () => {
         setLoading(true)
         setTimeout(() => {
             setProductCard(!productCard)
             setLoading(false)
         }, 500)
-
     }
 
     const singleProductDetails = (lst) => {
@@ -86,7 +81,7 @@ const FeaturedProduct = () => {
                                         {loading ? (
                                             <div className='processing-btn'>
                                                 <div className='processing-gap'>
-                                                    <span class="relative flex h-3 w-3">
+                                                    <span className="relative flex h-3 w-3">
                                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-90"></span>
                                                         <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
                                                     </span>
@@ -104,6 +99,9 @@ const FeaturedProduct = () => {
                         </div>
                     )
                 })}
+                {productCard ? (
+                    <div className="fixed inset-0 bg-black opacity-50"></div>
+                ) : null}
                 {productCard && (<FeaturedCard handleProductcard={handleProductCard} data={productDetails} />)}
             </div>
 

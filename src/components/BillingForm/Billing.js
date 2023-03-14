@@ -1,7 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Billing = () => {
     const [state, setState] = useState()
+
+    const list = () => {
+        setState(state)
+    }
+
+    useEffect(() => {
+        list()
+    })
+
     return (
         <div className='billing-wrapper'>
             <div className='order-wrapper-lines'>
