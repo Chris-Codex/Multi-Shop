@@ -356,59 +356,76 @@
 }
 
 .featuredcardModal {
-  @apply absolute w-full h-[650px] flex items-center justify-center mt-[150px]
+  @apply lg:absolute lg:w-full lg:h-[650px] lg:flex lg:items-center lg:justify-center lg:mt-[-100px]
+
 }
 
 .feeature-card {
-  @apply w-full bg-slate-50 px-10 pt-10 mx-60 pb-10 
+  @apply lg:w-full lg:bg-slate-50 lg:px-10 lg:pt-10 lg:mx-60 lg:pb-10 
 }
 
 .card-content {
-  @apply grid grid-cols-2  w-full  bg-slate-50 px-10
+  @apply lg:grid lg:grid-cols-2 lg:w-full lg:bg-slate-50 lg:px-10
 }
 
 .featuredCard-image {
-  @apply w-11/12 h-[400px] bg-[#000]
+  @apply lg:w-11/12 lg:h-[400px] 
 }
 
 .close-featuredCard {
-  @apply flex justify-end mt-[-20px]
+  @apply lg:flex lg:justify-end lg:mt-[-20px]
 }
 
 .color-list {
-  @apply flex flex-row space-x-2 mt-4
+  @apply lg:flex lg:flex-row lg:space-x-2 lg:mt-4
 }
 
 .card-content-title {
-  @apply text-[14px]
+  @apply lg:text-[14px]
 }
 
 .card-content-category {
-  @apply text-[#535353] text-[15px]
+  @apply lg:text-[#535353] lg:text-[15px]
 }
 
 .card-content-price {
-  @apply text-[25px] mt-2 font-bold
+  @apply lg:text-[25px] lg:mt-2 lg:font-bold
 }
 
 .content-wrapper {
-  @apply w-full
+  @apply lg:w-full
 }
 
 .card-content-border {
-  @apply w-full border border-dotted  bg-[#999] mt-4
+  @apply lg:w-full lg:border lg:border-dotted lg:bg-[#999] lg:mt-4
 }
 
 .color-list-h3 {
-  @apply text-[#535353]
+  @apply lg:text-[#535353]
 }
 
 .color-list-p {
-  @apply text-[#797979]
+  @apply lg:text-[#797979]
 }
 
-.btn-wrapper {
-  @apply w-full h-[50px] space-x-4 mt-10 bg-[#f00]
+.card-content-btn {
+  @apply lg:flex lg:flex-row lg:items-center lg:justify-center lg:w-full lg:h-[50px] lg:space-x-6 lg:mt-10 
+}
+
+.btn-submit {
+  @apply lg:flex lg:items-center lg:justify-center lg:w-11/12 lg:h-[50px] lg:bg-[#ffc300]
+}
+
+.btn-icon {
+  @apply lg:flex lg:items-center lg:justify-center lg:w-[50px] lg:h-[50px] lg:border lg:border-[#999] lg:rounded-full
+}
+
+.btn-submit-p {
+  @apply lg:text-[#5c5a5a] lg:font-bold
+}
+
+.card-content-details {
+  @apply lg:text-[#535353] lg:text-[13px] lg:mt-2
 }
 
 

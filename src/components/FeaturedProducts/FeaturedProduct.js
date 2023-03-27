@@ -30,7 +30,7 @@ const FeaturedProduct = () => {
 
     useEffect(() => {
         const products = async () => {
-            const getAllProducts = await axios.get("http://localhost:4000/product").catch((error) => console.log(error.message))
+            const getAllProducts = await axios.get("http://localhost:3001/product").catch((error) => console.log(error.message))
             const data = getAllProducts.data
 
             return data
@@ -49,7 +49,7 @@ const FeaturedProduct = () => {
         return text
     }
 
-    const handleProduct = (product) => {
+    const handleAddProduct = (product) => {
         dispatch(addToCart(product))
     }
 
@@ -102,7 +102,7 @@ const FeaturedProduct = () => {
                 {productCard ? (
                     <div className="fixed inset-0 bg-black opacity-50"></div>
                 ) : null}
-                {productCard && (<FeaturedCard handleProductcard={handleProductCard} data={productDetails} />)}
+                {productCard && (<FeaturedCard handleProductcard={handleProductCard} handleAddProduc={handleAddProduct} data={productDetails} />)}
             </div>
 
         </>

@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineClose } from "react-icons/ai"
+import { BsHeart } from "react-icons/bs"
+import { Link } from 'react-router-dom';
 import CheckBox from '../SingleProduct/CheckBox';
+import { color } from '../SingleProduct/checkboxdata';
 import CheckColors from '../SingleProduct/CheckColors';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../features/cartSlice/cartSlice';
+import { useContext } from 'react';
+import { themeContext } from '../../context/contextApi';
 
 const FeaturedCard = ({ handleProductcard, data }) => {
+    const { selectedColor, handleColorChange, selectedSize, isColor } = useContext(themeContext)
+    const dispatch = useDispatch()
+    const [loading, setLoading] = useState(false)
 
-    console.log("MY x", data)
+    const handleLikeBtn = () => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(!loading)
+            setLoading(false)
+        }, 200)
+    }
+
+    const handleAddToCart = (product) => {
+        dispatch(addToCart({ product, color: selectedColor }))
+        console.log("SEE", dispatch(addToCart({ ...product, color: selectedColor, size: selectedSize })))
+    }
 
     return (
         <div className='featuredcardModal'>
@@ -16,27 +36,38 @@ const FeaturedCard = ({ handleProductcard, data }) => {
                 </div>
                 <div className='card-content'>
                     <div className='featuredCard-image'>
-                        Image
+                        <img src={data.image} className="featuredCard-image" />
                     </div>
                     <div className='content-wrapper'>
                         <div>
-                            <p className='card-content-title'>Title</p>
-                            <p className='card-content-category'>Category</p>
-                            <p className='card-content-price'>$120.47</p>
+                            <p className='card-content-title'>{data.title}</p>
+                            <p className='card-content-category'>{data.category}</p>
+                            <p className='card-content-price'>${data.price}</p>
                         </div>
                         < div className='card-content-border'></div >
                         <div className='color-list'>
                             <h3 className='color-list-h3'>Color:</h3>
-                            <p className='color-list-p'>Black</p>
+                            <p className='color-list-p'>{selectedColor}</p>
                         </div>
-                        <CheckColors />
+                        <CheckColors handleColorChange={handleColorChange} isColor={isColor} />
                         <CheckBox />
-                        <div className='btn-wrapper'>
-                            {/* <div className='btn-submit'>
-                                <p>Btn 1</p>
+                        <div className='card-content-btn'>
+                            <div className='btn-submit' onClick={() => handleAddToCart(data)}>
+                                <p className='btn-submit-p'>Add To Cart</p>
                             </div>
-                            <p>Btn 2</p> */}
+                            {loading ? (
+                                <div className='btn-icon'>
+                                    <BsHeart size={15} color="#ffc300" className='animate-ping' />
+                                </div>
+                            ) : (
+                                <div className='btn-icon' onClick={handleLikeBtn}>
+                                    <BsHeart size={23} />
+                                </div>
+                            )}
                         </div>
+                        <Link to={`product_desc/${data._id}`}>
+                            <p className='card-content-details'>View Full Details</p>
+                        </Link>
                     </div>
                 </div>
             </div>

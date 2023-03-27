@@ -28,6 +28,6 @@ mongose.connect(process.env.CONNECT_DB, { useNewUrlParser: true, useUnifiedTopol
     .catch((error) => console.error(error))
 
 //port 
-app.listen(4000, () => {
-    console.log("Listening to Port 4000")
+app.listen(3001, () => {
+    console.log("Listening to Port 3001")
 })

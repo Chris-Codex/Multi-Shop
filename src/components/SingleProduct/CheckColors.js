@@ -1,17 +1,9 @@
-import React, { useState } from 'react'
-import { color } from './checkboxdata'
+import React from 'react'
 
 
-const CheckColors = () => {
-    const [isColor, setIsColor] = useState(color)
 
-    const handleColorChange = (id) => {
-        const updatedColor = isColor.map((list) =>
-            list.id === id ? { ...list, checked: true } : { ...list, checked: false }
-        )
+const CheckColors = ({ handleColorChange, isColor }) => {
 
-        setIsColor(updatedColor)
-    }
 
     return (
         <div className='order-colors'>

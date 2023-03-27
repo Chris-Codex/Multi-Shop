@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
-import { checkBoxes } from './checkboxdata'
+import React, { useContext } from 'react'
+import { themeContext } from '../../context/contextApi';
 
 const CheckBox = () => {
-    const [options, setOptions] = useState(checkBoxes)
-
-    const handleOptionChange = (optionId) => {
-        const updatedCheckbox = options.map((option) =>
-            option.id === optionId ? { ...option, checked: true } : { ...option, checked: false }
-        )
-
-        setOptions(updatedCheckbox)
-    }
+    const { handleSizeChange, size } = useContext(themeContext)
+    // const [options, setOptions] = useState(checkBoxes)
+    // const [selectedSize, setSelectedSize] = useState()
 
     return (
         <div className='order-sizes'>
             <p className='sizes-header'>Sizes:</p>
-            {options.map((option) => {
+            {size.map((option) => {
                 const { id, label, checked } = option
                 return (
                     <div key={id}>
@@ -25,7 +19,7 @@ const CheckBox = () => {
                                 type="radio"
                                 className="border-10"
                                 checked={checked}
-                                onChange={() => handleOptionChange(id)}
+                                onChange={() => handleSizeChange(id)}
                             />
                             <p className='text-[#797979]'>{label}</p>
                         </div>
