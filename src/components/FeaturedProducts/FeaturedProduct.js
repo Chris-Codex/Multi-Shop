@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { featuredProducts } from '../../features/productSlice/productSlice';
 import { addToCart } from '../../features/cartSlice/cartSlice';
-import { Link } from 'react-router-dom';
 import FeaturedCard from './FeaturedCard';
 
 
@@ -75,9 +74,6 @@ const FeaturedProduct = () => {
                                 </div>
                                 {shwBtn === _id ? (
                                     <div className='btn-container'>
-                                        {/* <Link to={`product_desc/${_id}`}>
-                                            <div className='details-btn'>Details</div>
-                                        </Link> */}
                                         {loading ? (
                                             <div className='processing-btn'>
                                                 <div className='processing-gap'>

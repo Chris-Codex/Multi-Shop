@@ -11,7 +11,7 @@ const Category = () => {
             </div>
             <div className='category-container'>
                 {cat.map((item, index) => {
-                    const { id, cat_image, category, count } = item
+                    const { cat_image, category, count } = item
                     return (
                         <div className='category-card' key={index}>
                             <div className='category-image'>

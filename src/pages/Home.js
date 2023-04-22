@@ -10,6 +10,7 @@ const Home = () => {
             <Headers />
             <SearchBar />
             <HeaderLinks />
+
             <SliderSm />
             <SliderBg />
             <Service />

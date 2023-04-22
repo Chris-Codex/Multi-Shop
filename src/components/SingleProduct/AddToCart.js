@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { decreaseCart, increaseCart } from '../../features/cartSlice/cartSlice';
 
 
-const AddToCart = ({ id, cartQuantity }) => {
+const AddToCart = ({ id, cartQuantity, handleAddToCart }) => {
     // const dispatch = useDispatch()
 
     return (
@@ -20,7 +20,7 @@ const AddToCart = ({ id, cartQuantity }) => {
                     <BsPlusLg />
                 </div>
             </div>
-            <div className='add-to-cart'>
+            <div className='add-to-cart' onClick={handleAddToCart}>
                 <FaCartPlus />
                 <p>Add To Cart</p>
             </div>

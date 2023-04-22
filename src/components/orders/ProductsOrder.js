@@ -38,10 +38,11 @@ const ProductsOrder = () => {
                 </div>
                 <main>
                     {orders.map((order) => {
-                        const { id, title, image, price, cartQuantity
+                        const { _id, title, image, price, cartQuantity
                         } = order
+
                         return (
-                            <div className='products-container' key={id}>
+                            <div className='products-container' key={_id}>
                                 <div className='products-header'>
                                     <div>
                                         <img src={image} alt="image" className='product-image' />
@@ -49,15 +50,15 @@ const ProductsOrder = () => {
                                     </div>
                                     <div>${price}</div>
                                     <div className='counter-card'>
-                                        <div className='counter-decrease' onClick={() => dispatch(decreaseCart({ id }))}>-</div>
+                                        <div className='counter-decrease' onClick={() => dispatch(decreaseCart({ _id }))}>-</div>
                                         <div className='count'>
                                             <p className='text-center mt-1'>{cartQuantity
                                             }</p>
                                         </div>
-                                        <div className='counter-increase' onClick={() => dispatch(increaseCart({ id }))}>+</div>
+                                        <div className='counter-increase' onClick={() => dispatch(increaseCart({ _id }))}>+</div>
                                     </div>
                                     <div>${convertPrice(price * cartQuantity)}</div>
-                                    <div className='order-remove' onClick={() => dispatch(removeProduct({ id }))}>
+                                    <div className='order-remove' onClick={() => dispatch(removeProduct({ _id }))}>
                                         <p>x</p>
                                     </div>
                                 </div>

@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import { checkBoxes, color } from "../components/SingleProduct/checkboxdata";
 
 
+
 export const themeContext = createContext();
 
 export const ContextProvider = ({ children }) => {
@@ -9,6 +10,8 @@ export const ContextProvider = ({ children }) => {
     const [selectedColor, setSelectedColor] = useState("Black")
     const [size, setSize] = useState(checkBoxes)
     const [selectedSize, setSelectedSize] = useState("S")
+
+
 
     // function to handle checkbox color selection
     const handleColorChange = (id) => {

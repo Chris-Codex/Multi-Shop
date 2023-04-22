@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { themeContext } from '../../context/contextApi';
 
 
 
-const CheckColors = ({ handleColorChange, isColor }) => {
-
+const CheckColors = () => {
+    const { handleColorChange, isColor } = useContext(themeContext)
 
     return (
         <div className='order-colors'>

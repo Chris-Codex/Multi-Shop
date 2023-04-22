@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineClose } from "react-icons/ai"
 import { BsHeart } from "react-icons/bs"
 import { Link } from 'react-router-dom';
 import CheckBox from '../SingleProduct/CheckBox';
-import { color } from '../SingleProduct/checkboxdata';
 import CheckColors from '../SingleProduct/CheckColors';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/cartSlice/cartSlice';
 import { useContext } from 'react';
 import { themeContext } from '../../context/contextApi';
@@ -24,8 +23,7 @@ const FeaturedCard = ({ handleProductcard, data }) => {
     }
 
     const handleAddToCart = (product) => {
-        dispatch(addToCart({ product, color: selectedColor }))
-        console.log("SEE", dispatch(addToCart({ ...product, color: selectedColor, size: selectedSize })))
+        dispatch(addToCart({ ...product, size: selectedSize, color: selectedColor }))
     }
 
     return (
@@ -49,7 +47,7 @@ const FeaturedCard = ({ handleProductcard, data }) => {
                             <h3 className='color-list-h3'>Color:</h3>
                             <p className='color-list-p'>{selectedColor}</p>
                         </div>
-                        <CheckColors handleColorChange={handleColorChange} isColor={isColor} />
+                        <CheckColors />
                         <CheckBox />
                         <div className='card-content-btn'>
                             <div className='btn-submit' onClick={() => handleAddToCart(data)}>

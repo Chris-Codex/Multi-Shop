@@ -10,7 +10,7 @@ router.post("/", (req, res) => {
     const { title, price, description, category, image } = req.body
 
     const addProduct = new productModel({
-        title, price, description, category, image, color, size
+        title, price, description, category, image
     })
 
     try {
@@ -59,8 +59,6 @@ router.patch("/update/:productid", async (req, res) => {
                     description: req.body.description,
                     category: req.body.category,
                     image: req.body.image
-                    // color: req.body.color,
-                    // size: req.body.size
                 }
             }
         )

@@ -9,9 +9,6 @@ const initialState = {
     shippingFee: 0
 }
 
-console.log('cartItems from localStorage:', initialState.cartTotalQuantity);
-console.log('parsed cartItems:', JSON.parse(localStorage.getItem("cartItems")));
-
 export const cartSlice = createSlice({
     name: "cart",
     initialState,
@@ -60,7 +57,7 @@ export const cartSlice = createSlice({
             }
         },
 
-        clearCart: (state, action) => {
+        clearCart: (state) => {
             state.cartItems = []
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
             toast.error(`Cart Cleared`, {
