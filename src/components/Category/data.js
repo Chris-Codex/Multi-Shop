@@ -2,7 +2,8 @@ export const categories = [
     {
         cat_image: "https://res.cloudinary.com/dnsvc5pcu/image/upload/v1675128754/OnlineShop/Multi-shop/catt-removebg-preview_adj9ot.png",
         category: "Fashion & Apparrel",
-        count: "20 Products Left"
+        count: "20 Products Left",
+        fashion_category: ["Men", "Women", "Kids"],
     },
     {
         cat_image: "https://i.pinimg.com/originals/34/27/07/3427078fecf554d660612cad5ef2943c.jpg",
