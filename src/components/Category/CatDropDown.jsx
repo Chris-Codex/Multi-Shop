@@ -10,13 +10,13 @@ const CatDropDown = () => {
       className="category-dropdown-wrapper"
       animate={{ y: 1, scale: 1 }}
       initial={{ scale: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ type: "tween" }}
     >
       <div className="cat-div">
         {categories.map((cat, index) => {
           const { category } = cat;
           return (
-            <ul className="cat-ul">
+            <ul className="cat-ul" key={index}>
               <li className="cat-li">{category}</li>
             </ul>
           );

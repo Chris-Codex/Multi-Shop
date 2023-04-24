@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { categories } from './data';
+import { motion } from "framer-motion"
 
 const Category = () => {
     const [cat, setCat] = useState(categories)
@@ -13,7 +14,7 @@ const Category = () => {
                 {cat.map((item, index) => {
                     const { cat_image, category, count } = item
                     return (
-                        <div className='category-card' key={index}>
+                        <motion.div className='category-card' key={index} animate={{ y: 1, scale: 1 }} initial={{ scale: 0 }} whileHover={{ scale: 0.97, opacity: 2.0 }}>
                             <div className='category-image'>
                                 <img src={cat_image} alt="name" className='image' />
                             </div>
@@ -21,7 +22,7 @@ const Category = () => {
                                 <h3 className='category-h3'>{category}</h3>
                                 <p className='category-p'>{count}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>

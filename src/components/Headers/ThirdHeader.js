@@ -31,9 +31,9 @@ const ThirdHeader = () => {
     return (
         <section>
             <div className='third-header'>
-                <div className='category-Links-container'>
+                <div className='category-Links-container' onClick={handleToggleCat}>
                     <div className='category-card-header'>
-                        <div className='hamburger-category-container' onClick={handleToggleCat}>
+                        <div className='hamburger-category-container'>
                             <GiHamburgerMenu size={20} />
                             Category
                         </div>

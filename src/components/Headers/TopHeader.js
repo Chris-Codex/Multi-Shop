@@ -4,6 +4,11 @@ import { FaShoppingCart } from "react-icons/fa"
 import { AiTwotoneHeart } from "react-icons/ai"
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+
+const links = ["About", "Contact", "Help", "FAQS",]
+
+console.log(links)
 
 
 const Top_Header = () => {
@@ -11,13 +16,15 @@ const Top_Header = () => {
 
   return (
     <div className='topheader'>
-      <ul className='orderlist'>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Help</li>
-        <li>FAQS</li>
-        <li>Contact</li>
-      </ul>
+      <nav className="flex flex-row space-x-4 w-[500px]">
+        {links.map((link, index) => {
+          return (
+            <ul className='orderlist'>
+              <li className={`${link === "About" || link === "Contact" || link === "FAQS" || link === "Help" ? "hover:underline" : null}`}>{link}</li>
+            </ul>
+          )
+        })}
+      </nav>
       <div className='top-header-card'>
         <div className='account-card'>
           <h3>My Account</h3>
