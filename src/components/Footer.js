@@ -40,9 +40,7 @@ const Footer = () => {
                     <h3 className='getin-touch-h3'>NEWSLETTER</h3>
                     <p className='getin-touch-p'>Multi Shop news letter subscription goes here</p>
                     <div className='newslettter-fields'>
-                        <div className='input'>
-                            <input type="text" className='input-field' placeholder='Sign up for newsletter' />
-                        </div>
+                        <input type="text" className='input-field' placeholder='Sign up for newsletter' />
                         <div className='input-btn'>Sign Up</div>
                     </div>
                 </div>

@@ -514,7 +514,7 @@ body {
 }
 
 .input-btn {
-  @apply w-2/12 h-[45px] bg-[#ffc300] flex items-center justify-center text-[#535353] md:w-4/12 md:h-[50px]
+  @apply w-2/12 h-[45px] bg-[#ffc300] flex items-center justify-center text-[#535353] md:w-4/12 md:h-[53px] cursor-pointer
 }
 
 /*FOLLOW US*/
